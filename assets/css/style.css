@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a,
+span {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+.hide {
+  display: none;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.wrapper {
+}
+.container {
+}
+.info {
+}
+.info__title {
+}
+.title {
+}
+.info__sort {
+}
+.sort {
+}
+.product {
+}
+.product__add {
+}
+.product_add_name {
+}
+.product__add_discription {
+}
+.pdoruct__add_img {
+}
+.product__add_price {
+}
+.product__add_button {
+}
+.add {
+  font-family: "Inter", sans-serif;
+}
+.product__main {
+}
+.product__items {
+}
+.product__items_item {
+}
+.product__item_img {
+}
+.product__item_name {
+}
+.product__item_discription {
+}
+.product__item_price {
+}

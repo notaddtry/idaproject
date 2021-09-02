@@ -21,10 +21,16 @@ textarea {
   outline: none;
   resize: none;
   overflow: auto;
+  position: relative;
 }
 .hide {
   display: none;
 }
+.error {
+  width: 100%;
+  border: 1px solid #ff8484;
+}
+
 button {
   padding: 0;
   border: none;
@@ -38,6 +44,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   color: #3f3f3f;
+  padding: 0;
+  margin: 0;
 }
 
 .wrapper {
@@ -109,15 +117,30 @@ body {
   margin: 0 16px 0 0;
   max-height: 440px;
 }
-.product_add_item {
+.product__add_item {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
-.product_add_item:not(:last-child) {
+.product__add_item:not(:last-child) {
   margin: 0px 0px 16px 0px;
 }
+.product__add_item::after {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  display: none;
+  content: "Поле является обязательным";
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 10px;
+  /* identical to box height */
 
+  letter-spacing: -0.02em;
+
+  color: #ff8484;
+}
 .product__add_name {
 }
 .add_txt {
@@ -202,15 +225,38 @@ body {
   flex-wrap: wrap;
 }
 .product__items_item {
+  position: relative;
   flex: 1 1 100%;
   max-width: 332px;
-  background: #fffefb;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.02);
+  background-color: #fffefb;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
+    0px 6px 10px rgba(0, 0, 0, 0.02);
   border-radius: 4px;
   margin: 0 16px 16px 0;
 }
+.product__items_item::after {
+  content: "";
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  top: -8px;
+  right: -8px;
+
+  background: #ff8484 center no-repeat;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.product__items_item:hover::after,
+.product__items_item:hover .icon-delete {
+  opacity: 1;
+  visibility: visible;
+}
+
 .product__items_item:nth-child(3n) {
-  margin: 0 0px 0 0;
+  margin: 0 0px 16px 0;
 }
 .product__item_img {
   max-height: 200px;
@@ -242,4 +288,21 @@ body {
   font-weight: 600;
   font-size: 24px;
   line-height: 30px;
+}
+
+/*--------------------------------------------ICONS*/
+.icon-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  right: -8px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
 }

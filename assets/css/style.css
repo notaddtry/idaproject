@@ -29,6 +29,9 @@ textarea {
 .error {
   width: 100%;
   border: 1px solid #ff8484;
+  position: relative;
+}
+.up {
 }
 
 button {
@@ -76,18 +79,23 @@ body {
   line-height: 35px;
 }
 .info__sort {
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
 }
 .sort {
 }
-.sort:focus .sort_arrow {
-  transform: translateY(75%) rotate(180deg);
-}
+
 .sort__body {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   display: flex;
   justify-content: center;
-
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  background: #fffefb;
+}
+.sort__body_main {
+  display: flex;
+  justify-content: center;
   padding: 10px 16px 11px 16px;
 }
 .sort_btn {
@@ -102,8 +110,24 @@ body {
   height: 100%;
   color: #b4b4b4;
 }
+
 .icon-arrow {
   font-size: 5px;
+}
+.sort__body_items {
+  position: relative;
+  z-index: 2;
+  display: none;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.sort__body_item {
+  color: #b4b4b4;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 5px 0;
 }
 
 .product {
@@ -131,19 +155,6 @@ body {
   margin: 0px 0px 16px 0px;
 }
 .product__add_item::after {
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  display: none;
-  content: "Поле является обязательным";
-  font-weight: normal;
-  font-size: 8px;
-  line-height: 10px;
-  /* identical to box height */
-
-  letter-spacing: -0.02em;
-
-  color: #ff8484;
 }
 .product__add_name {
 }

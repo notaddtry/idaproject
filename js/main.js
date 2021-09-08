@@ -83,6 +83,48 @@ function formAddError(input) {
 }
 
 function formRemoveError(input) {
-  input.parentElement.classList.remove("error")
   input.classList.remove("error")
+}
+
+let sortBtn = document.querySelector(".sort__body_main")
+let sortArrow = document.querySelector(".sort_arrow")
+let sortBody = document.querySelector(".sort__body_items")
+
+sortBtn.addEventListener("click", function () {
+  if (sortArrow.classList.contains("up")) {
+    sortArrow.style.transform = "translateY(100%) rotate(0deg)"
+    sortArrow.classList.remove("up")
+    sortBody.style.display = "none"
+  } else {
+    sortArrow.style.transform = "translateY(100%) rotate(180deg)"
+    sortArrow.classList.add("up")
+    sortBody.style.display = "flex"
+  }
+})
+
+let sortArray = document.querySelectorAll(".sort__body_item")
+sortArray = Array.from(sortArray)
+console.log(sortArray)
+
+sortArray.forEach((item) => {
+  item.addEventListener("click", () => {
+    console.log("1")
+  })
+})
+// for (const sortItem of sortArray) {
+//   sortItem.addEventListener("click", (e) => {
+//     console.log(sortItem)
+//     // у каждой карточки в атрибуте id задайте ID индификатор (_id) card.id = _id
+//     // const id = e.target.id // получаем индификатор и отправляем на сервер
+//     // console.log(id)
+//   })
+// }
+
+function sort(i) {
+  console.log(id)
+  // if (sortDef[i] == 0) {
+  //   sortArrow.style.transform = "translateY(100%) rotate(0deg)"
+  //   sortArrow.classList.remove("up")
+  //   sortBody.style.display = "none"
+  // }
 }

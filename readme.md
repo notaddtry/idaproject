@@ -1,2 +1,1 @@
-adding element work only with .jpg files like
-https://ktonanovenkogo.ru/image/finik.jpg
+u can test this => https://notaddtry.github.io/idaproject/
